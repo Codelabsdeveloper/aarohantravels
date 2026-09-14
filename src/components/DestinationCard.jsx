@@ -26,8 +26,12 @@ export default function DestinationCard({ destination }) {
             {destination.highlights.join(' · ')}
           </p>
         ) : null}
-        <Button href="#contact" variant="outline" className="mt-auto w-full !rounded-xl">
-          Plan This Trip
+        <Button
+          href={destination.id === 'northeast' ? '#northeast-india' : '#contact'}
+          variant="outline"
+          className="mt-auto w-full !rounded-xl"
+        >
+          {destination.id === 'northeast' ? 'View Packages' : 'Plan This Trip'}
         </Button>
       </div>
     </article>

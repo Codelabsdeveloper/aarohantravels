@@ -2,6 +2,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Destinations from './components/Destinations';
+import NortheastSpotlight from './components/NortheastSpotlight';
+import SpiritualTours from './components/SpiritualTours';
 import CustomizedTours from './components/CustomizedTours';
 import WhyChooseUs from './components/WhyChooseUs';
 import HowItWorks from './components/HowItWorks';
@@ -25,6 +27,8 @@ export default function App() {
         <Hero />
         <About />
         <Destinations />
+        <NortheastSpotlight />
+        <SpiritualTours />
         <CustomizedTours />
         <WhyChooseUs />
         <HowItWorks />

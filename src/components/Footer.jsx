@@ -1,4 +1,5 @@
 import { IconWhatsApp } from './Icons';
+import { BRAND_NAME, BRAND_TAGLINE_FULL } from '../data/brand';
 import {
   CONTACT_NAME,
   PHONE_DISPLAY,
@@ -9,6 +10,7 @@ import {
 const footerLinks = [
   { href: '#home', label: 'Home' },
   { href: '#destinations', label: 'Destinations' },
+  { href: '#spiritual-tours', label: 'Spiritual Tours' },
   { href: '#about', label: 'About' },
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact', label: 'Contact' },
@@ -30,10 +32,10 @@ export default function Footer() {
             />
           </a>
           <h2 id="footer-heading" className="mt-4 font-display text-2xl font-semibold">
-            Aarohan Travels
+            {BRAND_NAME}
           </h2>
           <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/70">
-            Customized journeys. Better memories.
+            {BRAND_TAGLINE_FULL}
           </p>
         </div>
 
@@ -73,7 +75,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col gap-2 py-5 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Aarohan Travels. All Rights Reserved.</p>
-          <p>Customized tours across India</p>
+          <p>Walk with Faith, Travel with the Soul, Return with Blessings.</p>
         </div>
       </div>
     </footer>
