@@ -30,7 +30,7 @@ export const testimonials = [
     location: 'Kochi',
     rating: 5,
     review:
-      'Communicating with Tejus was easy and clear. Our East India itinerary balanced sightseeing and downtime perfectly for our group of friends.',
+      'Communicating with Tejas was easy and clear. Our East India itinerary balanced sightseeing and downtime perfectly for our group of friends.',
   },
   {
     id: 5,

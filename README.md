@@ -46,7 +46,8 @@ RewriteRule ^ index.html [QSA,L]
 
 Configured in `src/data/whatsapp.js`:
 
-- Phone: Tejus — 70900 38519
+- Phone: Tejas BC — 70900 38519
+- Email: aarohantravels14@gmail.com
 - WhatsApp: https://wa.me/917090038519
 
 ## Content updates
@@ -57,4 +58,4 @@ Configured in `src/data/whatsapp.js`:
 
 ## Enquiry form
 
-The contact form validates input and is structured for a future backend/email service. It does not pretend to send data until that integration is added. WhatsApp and phone remain the primary enquiry channels.
+The contact form validates input and opens an email draft to aarohantravels14@gmail.com. WhatsApp and phone remain alternate enquiry channels.

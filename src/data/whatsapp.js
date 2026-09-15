@@ -27,6 +27,6 @@ export function buildPackageEnquiryUrl({
 
 export const PHONE_DISPLAY = '70900 38519';
 export const PHONE_TEL = 'tel:+917090038519';
-export const CONTACT_NAME = 'Tejus';
-export const CONTACT_EMAIL = 'tejasbc33@gmail.com';
+export const CONTACT_NAME = 'Tejas BC';
+export const CONTACT_EMAIL = 'aarohantravels14@gmail.com';
 export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;

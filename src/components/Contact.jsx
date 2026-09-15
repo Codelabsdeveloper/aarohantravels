@@ -15,7 +15,6 @@ import { useReveal } from '../hooks/useReveal';
 const initialForm = {
   name: '',
   phone: '',
-  email: '',
   destination: '',
   travelDate: '',
   adults: '',
@@ -41,9 +40,6 @@ export default function Contact() {
     if (!form.name.trim()) next.name = 'Please enter your name.';
     if (!/^[0-9+\-\s]{8,15}$/.test(form.phone.trim())) {
       next.phone = 'Enter a valid phone number.';
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-      next.email = 'Enter a valid email address.';
     }
     if (!form.destination.trim()) next.destination = 'Select a preferred destination.';
     if (form.adults === '' || Number(form.adults) < 1) {
@@ -71,7 +67,6 @@ export default function Contact() {
       '',
       `Name: ${form.name}`,
       `Phone: ${form.phone}`,
-      `Email: ${form.email}`,
       `Preferred Destination: ${form.destination}`,
       `Approximate Travel Date: ${form.travelDate || 'Not specified'}`,
       `Number of Adults: ${form.adults}`,
@@ -81,8 +76,7 @@ export default function Contact() {
       form.message,
     ].join('\n');
 
-    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoUrl;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     setErrors({});
     setSubmitted(true);
@@ -182,23 +176,7 @@ export default function Contact() {
                 />
                 {errors.phone ? <p className="mt-1 text-xs text-orange">{errors.phone}</p> : null}
               </div>
-              <div>
-                <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-navy">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={form.email}
-                  onChange={onChange}
-                  className={fieldClass}
-                  autoComplete="email"
-                  required
-                />
-                {errors.email ? <p className="mt-1 text-xs text-orange">{errors.email}</p> : null}
-              </div>
-              <div>
+              <div className="sm:col-span-2">
                 <label htmlFor="destination" className="mb-1.5 block text-sm font-medium text-navy">
                   Preferred Destination
                 </label>

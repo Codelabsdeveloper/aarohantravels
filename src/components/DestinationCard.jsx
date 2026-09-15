@@ -1,6 +1,18 @@
 import Button from './Button';
 
+function getCardAction(destination) {
+  if (destination.id === 'northeast') {
+    return { href: '#northeast-india', label: 'View Packages' };
+  }
+  if (destination.id === 'east-india') {
+    return { href: '#east-india', label: 'View Core States' };
+  }
+  return { href: '#contact', label: 'Plan This Trip' };
+}
+
 export default function DestinationCard({ destination }) {
+  const action = getCardAction(destination);
+
   return (
     <article className="group overflow-hidden rounded-[1.5rem] bg-white shadow-[0_16px_40px_rgba(11,31,74,0.08)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(11,31,74,0.14)]">
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -26,12 +38,8 @@ export default function DestinationCard({ destination }) {
             {destination.highlights.join(' · ')}
           </p>
         ) : null}
-        <Button
-          href={destination.id === 'northeast' ? '#northeast-india' : '#contact'}
-          variant="outline"
-          className="mt-auto w-full !rounded-xl"
-        >
-          {destination.id === 'northeast' ? 'View Packages' : 'Plan This Trip'}
+        <Button href={action.href} variant="outline" className="mt-auto w-full !rounded-xl">
+          {action.label}
         </Button>
       </div>
     </article>

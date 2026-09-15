@@ -1,6 +1,7 @@
 import { IconWhatsApp } from './Icons';
 import { BRAND_NAME, BRAND_TAGLINE_FULL } from '../data/brand';
 import {
+  CONTACT_EMAIL,
   CONTACT_NAME,
   PHONE_DISPLAY,
   PHONE_TEL,
@@ -60,6 +61,12 @@ export default function Footer() {
               {PHONE_DISPLAY}
             </a>
           </p>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="mt-2 block text-sm text-white/75 transition hover:text-gold"
+          >
+            {CONTACT_EMAIL}
+          </a>
           <a
             href={WHATSAPP_URL}
             target="_blank"

@@ -23,11 +23,33 @@ export const destinations = [
     id: 'east-india',
     name: 'East India',
     description:
-      'Explore the diverse landscapes, rich culture, monasteries, wildlife and natural beauty of Eastern India.',
+      'Explore the core states of East India — ancient history, mineral-rich forests, coastal temples and the Himalayas-to-delta expanse of West Bengal. (Northeast India is a separate destination.)',
     image:
       'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Misty mountain landscape in the Eastern Himalayas',
-    highlights: ['Sikkim', 'Darjeeling', 'Meghalaya', 'Assam'],
+    imageAlt: 'Landscapes of Eastern India',
+    highlights: ['Bihar', 'Jharkhand', 'Odisha', 'West Bengal'],
+    coreStates: [
+      {
+        name: 'Bihar',
+        description:
+          'Located on the Indo-Gangetic plain, known for rich ancient history.',
+      },
+      {
+        name: 'Jharkhand',
+        description:
+          'A hilly, heavily forested state on the Chhota Nagpur Plateau rich in minerals.',
+      },
+      {
+        name: 'Odisha',
+        description:
+          'Stretches along the Bay of Bengal and Eastern Ghats, known for its temples.',
+      },
+      {
+        name: 'West Bengal',
+        description:
+          'Spans from the Himalayas down to the Bay of Bengal delta.',
+      },
+    ],
   },
   {
     id: 'south-india',
