@@ -78,19 +78,41 @@ export default function Hero() {
                 width="2000"
                 height="1333"
               />
-              {slide.background ? (
-                <div
-                  className="absolute inset-0 bg-[#556B2F]/40 mix-blend-multiply"
-                  aria-hidden="true"
-                />
+              {slide.id === 'kailash' ? (
+                <>
+                  <div
+                    className="absolute inset-0 bg-[#556B2F]/50 mix-blend-multiply"
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="absolute inset-0 bg-[#6B8E23]/30 mix-blend-soft-light"
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-[#3d4f1f]/45 via-transparent to-[#556B2F]/20"
+                    aria-hidden="true"
+                  />
+                </>
               ) : null}
             </div>
           );
         })}
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/55 via-navy/35 to-navy/15" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/50 via-transparent to-navy-deep/20" />
+      <div
+        className={`absolute inset-0 transition-colors duration-1000 ${
+          HERO_SLIDES[active].id === 'kailash'
+            ? 'bg-gradient-to-r from-[#2f3d18]/50 via-[#556B2F]/25 to-transparent'
+            : 'bg-gradient-to-r from-navy-deep/55 via-navy/35 to-navy/15'
+        }`}
+      />
+      <div
+        className={`absolute inset-0 transition-colors duration-1000 ${
+          HERO_SLIDES[active].id === 'kailash'
+            ? 'bg-gradient-to-t from-[#2f3d18]/45 via-transparent to-[#556B2F]/15'
+            : 'bg-gradient-to-t from-navy-deep/50 via-transparent to-navy-deep/20'
+        }`}
+      />
 
       <div className="container-site relative z-10 max-w-3xl">
         <p className="hero-animate mb-4 text-sm font-semibold tracking-[0.22em] text-gold uppercase">
