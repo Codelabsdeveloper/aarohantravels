@@ -13,6 +13,7 @@ export const spiritualRegions = [
     id: 'himachal',
     name: 'Himachal Pradesh',
     kind: 'places',
+    duration: '8N/9D',
     places: [
       'Kangra Devi',
       'Jwala Ji',
@@ -49,6 +50,7 @@ export const spiritualRegions = [
     id: 'delhi-ncr',
     name: 'Delhi & NCR',
     kind: 'places',
+    enquiry: true,
     places: [
       'Akshardham Temple',
       'Lotus Temple',

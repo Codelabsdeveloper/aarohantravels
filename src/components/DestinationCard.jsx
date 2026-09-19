@@ -4,9 +4,6 @@ function getCardAction(destination) {
   if (destination.id === 'northeast') {
     return { href: '#northeast-india', label: 'View Places' };
   }
-  if (destination.id === 'east-india') {
-    return { href: '#east-india', label: 'View Core States' };
-  }
   return { href: '#contact', label: 'Plan This Trip' };
 }
 

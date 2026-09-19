@@ -55,20 +55,32 @@ export default function SpiritualTours() {
                   ))}
                 </ul>
               ) : (
-                <ul className="mt-4 space-y-2">
-                  {region.places.map((place) => (
-                    <li
-                      key={place}
-                      className="flex items-start gap-2 text-sm leading-relaxed text-navy/75"
-                    >
-                      <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange"
-                        aria-hidden="true"
+                <>
+                  <ul className="mt-4 space-y-2">
+                    {region.places.map((place) => (
+                      <li
+                        key={place}
+                        className="flex items-start gap-2 text-sm leading-relaxed text-navy/75"
+                      >
+                        <span
+                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange"
+                          aria-hidden="true"
+                        />
+                        <span>{place}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {region.duration || region.enquiry ? (
+                    <div className="mt-4 rounded-2xl border border-navy/8 bg-white p-4">
+                      <p className="text-sm font-medium text-navy/85">{region.name} Circuit</p>
+                      <PackageEnquiry
+                        itinerary={`${region.name} Temple Circuit`}
+                        duration={region.duration}
+                        region={region.name}
                       />
-                      <span>{place}</span>
-                    </li>
-                  ))}
-                </ul>
+                    </div>
+                  ) : null}
+                </>
               )}
             </article>
           ))}

@@ -2,7 +2,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Destinations from './components/Destinations';
-import EastIndiaSpotlight from './components/EastIndiaSpotlight';
 import NortheastSpotlight from './components/NortheastSpotlight';
 import SpiritualTours from './components/SpiritualTours';
 import CustomizedTours from './components/CustomizedTours';
@@ -28,7 +27,6 @@ export default function App() {
         <Hero />
         <About />
         <Destinations />
-        <EastIndiaSpotlight />
         <NortheastSpotlight />
         <SpiritualTours />
         <CustomizedTours />

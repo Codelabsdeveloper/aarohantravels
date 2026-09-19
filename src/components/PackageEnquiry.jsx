@@ -97,7 +97,7 @@ export default function PackageEnquiry({
         />
         <Counter
           id={`${enquiryId}-children`}
-          label="Children below 12 years"
+          label="Children below 10 years"
           value={children}
           onChange={setChildren}
           min={0}

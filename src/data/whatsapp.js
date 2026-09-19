@@ -19,7 +19,7 @@ export function buildPackageEnquiryUrl({
     `Itinerary: ${itinerary}`,
     duration ? `Duration: ${duration}` : null,
     `Adults: ${adults}`,
-    `Children below 12 years: ${children}`,
+    `Children below 10 years: ${children}`,
   ].filter(Boolean);
 
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;

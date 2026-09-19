@@ -37,21 +37,33 @@ export const galleryImages = [
   },
   {
     id: 7,
-    src: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1000&q=80',
-    alt: 'Misty mountain peaks across the Indian Himalayas',
-    label: 'Mountains',
-  },
-  {
-    id: 8,
     src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80',
     alt: 'Golden sandy beach with turquoise water',
     label: 'Beaches',
   },
   {
-    id: 9,
+    id: 8,
     src: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80',
     alt: 'Taj Mahal heritage monument at golden hour',
     label: 'Heritage',
+  },
+  {
+    id: 9,
+    src: 'https://images.unsplash.com/photo-1644773182204-f0bf03cae0cb?auto=format&fit=crop&w=1000&q=80',
+    alt: 'South Indian temple gopuram of Sree Padmanabhaswamy Temple',
+    label: 'South Indian Temple',
+  },
+  {
+    id: 10,
+    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Ramanathaswamy_Temple%2C_Rameswaram.jpg/1280px-Ramanathaswamy_Temple%2C_Rameswaram.jpg',
+    alt: 'Ramanathaswamy Temple in Rameshwaram, Tamil Nadu',
+    label: 'Rameshwaram',
+  },
+  {
+    id: 11,
+    src: 'https://images.unsplash.com/photo-1762513839526-c596f5e99a9a?auto=format&fit=crop&w=1000&q=80',
+    alt: 'Ghats of Kashi along the sacred Ganges in Varanasi',
+    label: 'Kashi',
   },
 ];
 export const tourTypes = [
