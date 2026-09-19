@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from './Button';
 import SectionHeading from './SectionHeading';
-import { IconWhatsApp } from './Icons';
+import { IconMinus, IconPlus, IconWhatsApp } from './Icons';
 import {
   CONTACT_EMAIL,
   CONTACT_NAME,
@@ -17,10 +17,51 @@ const initialForm = {
   phone: '',
   destination: '',
   travelDate: '',
-  adults: '',
-  kids: '',
+  adults: 2,
+  kids: 0,
+  days: 5,
+  mealPlan: false,
   message: '',
 };
+
+function PersonCounter({ id, label, value, onChange, min = 0, max = 50 }) {
+  const count = Number.isFinite(Number(value)) ? Number(value) : min;
+
+  return (
+    <div>
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-navy">
+        {label}
+      </label>
+      <div className="inline-flex w-full items-center justify-between rounded-xl border border-navy/12 bg-white px-2 py-1.5">
+        <button
+          type="button"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-navy transition hover:bg-sand disabled:cursor-not-allowed disabled:opacity-35"
+          onClick={() => onChange(Math.max(min, count - 1))}
+          disabled={count <= min}
+          aria-label={`Decrease ${label}`}
+        >
+          <IconMinus className="h-4 w-4" />
+        </button>
+        <span
+          id={id}
+          className="w-14 text-center text-sm font-semibold text-navy"
+          aria-live="polite"
+        >
+          {count}
+        </span>
+        <button
+          type="button"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-navy transition hover:bg-sand disabled:cursor-not-allowed disabled:opacity-35"
+          onClick={() => onChange(Math.min(max, count + 1))}
+          disabled={count >= max}
+          aria-label={`Increase ${label}`}
+        >
+          <IconPlus className="h-4 w-4" />
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function Contact() {
   const { ref, isVisible } = useReveal();
@@ -29,8 +70,21 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const onChange = (event) => {
-    const { name, value } = event.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = event.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+    setErrors((prev) => ({ ...prev, [name]: '' }));
+    setSubmitted(false);
+  };
+
+  const setCount = (name, value) => {
+    const nextValue = Number(value);
+    setForm((prev) => ({
+      ...prev,
+      [name]: Number.isFinite(nextValue) ? nextValue : prev[name],
+    }));
     setErrors((prev) => ({ ...prev, [name]: '' }));
     setSubmitted(false);
   };
@@ -42,11 +96,14 @@ export default function Contact() {
       next.phone = 'Enter a valid phone number.';
     }
     if (!form.destination.trim()) next.destination = 'Select a preferred destination.';
-    if (form.adults === '' || Number(form.adults) < 1) {
-      next.adults = 'Enter at least 1 adult.';
+    if (Number(form.adults) < 1) {
+      next.adults = 'Select at least 1 adult.';
     }
-    if (form.kids === '' || Number(form.kids) < 0) {
-      next.kids = 'Enter 0 or more kids.';
+    if (Number(form.kids) < 0) {
+      next.kids = 'Select 0 or more kids.';
+    }
+    if (Number(form.days) < 1) {
+      next.days = 'Select at least 1 day.';
     }
     if (!form.message.trim()) next.message = 'Tell us a little about your trip.';
     return next;
@@ -70,7 +127,9 @@ export default function Contact() {
       `Preferred Destination: ${form.destination}`,
       `Approximate Travel Date: ${form.travelDate || 'Not specified'}`,
       `Number of Adults: ${form.adults}`,
-      `Number of Kids (below 12 years): ${form.kids}`,
+      `Number of Kids (0 - 10 years): ${form.kids}`,
+      `Number of Days: ${form.days}`,
+      `Meal Plan: ${form.mealPlan ? 'Yes' : 'No'}`,
       '',
       'Message:',
       form.message,
@@ -200,6 +259,53 @@ export default function Contact() {
                   <p className="mt-1 text-xs text-orange">{errors.destination}</p>
                 ) : null}
               </div>
+              <div>
+                <PersonCounter
+                  id="adults"
+                  label="Adults"
+                  value={form.adults}
+                  onChange={(value) => setCount('adults', value)}
+                  min={1}
+                />
+                {errors.adults ? <p className="mt-1 text-xs text-orange">{errors.adults}</p> : null}
+              </div>
+              <div>
+                <PersonCounter
+                  id="kids"
+                  label="Kids (0 - 10 years)"
+                  value={form.kids}
+                  onChange={(value) => setCount('kids', value)}
+                  min={0}
+                />
+                {errors.kids ? <p className="mt-1 text-xs text-orange">{errors.kids}</p> : null}
+              </div>
+              <div className="sm:col-span-2">
+                <PersonCounter
+                  id="days"
+                  label="Number of Days"
+                  value={form.days}
+                  onChange={(value) => setCount('days', value)}
+                  min={1}
+                  max={60}
+                />
+                {errors.days ? <p className="mt-1 text-xs text-orange">{errors.days}</p> : null}
+              </div>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="mealPlan"
+                  className="inline-flex cursor-pointer items-center gap-3 rounded-xl border border-navy/12 bg-white px-4 py-3 text-sm font-medium text-navy transition hover:border-navy/25"
+                >
+                  <input
+                    id="mealPlan"
+                    name="mealPlan"
+                    type="checkbox"
+                    checked={form.mealPlan}
+                    onChange={onChange}
+                    className="h-4 w-4 rounded border-navy/30 text-orange accent-orange focus:ring-orange/30"
+                  />
+                  Meal Plan - Select if you want to include a meal plan in your trip.
+                </label>
+              </div>
               <div className="sm:col-span-2">
                 <label htmlFor="travelDate" className="mb-1.5 block text-sm font-medium text-navy">
                   Approximate Travel Date
@@ -212,40 +318,6 @@ export default function Contact() {
                   onChange={onChange}
                   className={fieldClass}
                 />
-              </div>
-              <div>
-                <label htmlFor="adults" className="mb-1.5 block text-sm font-medium text-navy">
-                  Number of Adults
-                </label>
-                <input
-                  id="adults"
-                  name="adults"
-                  type="number"
-                  min="1"
-                  max="100"
-                  value={form.adults}
-                  onChange={onChange}
-                  className={fieldClass}
-                  required
-                />
-                {errors.adults ? <p className="mt-1 text-xs text-orange">{errors.adults}</p> : null}
-              </div>
-              <div>
-                <label htmlFor="kids" className="mb-1.5 block text-sm font-medium text-navy">
-                  Number of Kids (below 12 years)
-                </label>
-                <input
-                  id="kids"
-                  name="kids"
-                  type="number"
-                  min="0"
-                  max="100"
-                  value={form.kids}
-                  onChange={onChange}
-                  className={fieldClass}
-                  required
-                />
-                {errors.kids ? <p className="mt-1 text-xs text-orange">{errors.kids}</p> : null}
               </div>
             </div>
 

@@ -83,9 +83,9 @@ export const whyChooseUs = [
   },
   {
     id: 3,
-    title: 'Handpicked Experiences',
+    title: 'International Business Partner',
     description:
-      'Discover destinations through carefully planned experiences.',
+      'We do Europe, South Africa, Japan, Thailand, Sri Lanka and Korea.',
     icon: 'spark',
   },
   {

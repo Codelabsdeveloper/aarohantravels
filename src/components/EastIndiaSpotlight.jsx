@@ -23,7 +23,7 @@ export default function EastIndiaSpotlight() {
           id="east-india-heading"
           eyebrow="East India"
           title="Core States of East India"
-          description="Bihar, Jharkhand, Odisha and West Bengal form the core of East India. Northeast India is a separate region with its own destinations and packages."
+          description="Bihar, Jharkhand, Odisha and West Bengal form the core of East India. Northeast India is a separate region with its own destinations."
         />
 
         <div

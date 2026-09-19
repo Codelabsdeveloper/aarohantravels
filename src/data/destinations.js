@@ -72,14 +72,14 @@ export const destinations = [
     highlights: ['Delhi', 'Agra', 'Varanasi', 'Himachal'],
   },
   {
-    id: 'goa',
-    name: 'Goa',
+    id: 'west-india',
+    name: 'West India',
     description:
       'Unwind on golden beaches, explore Portuguese heritage, enjoy coastal cuisine and create relaxed memories by the Arabian Sea.',
     image:
       'https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    imageAlt: 'Palm-lined beach coastline in Goa, India',
-    highlights: ['Beaches', 'Old Goa', 'Nightlife', 'Water sports'],
+    imageAlt: 'Palm-lined beach coastline along the west coast of India',
+    highlights: ['Maharashtra', 'Gujarat', 'Goa'],
   },
   {
     id: 'northeast',
@@ -134,18 +134,6 @@ export const destinations = [
           'Gurudongmar Lake',
         ],
       },
-    ],
-    packages: [
-      { name: 'Meghalaya', duration: '5N/6D' },
-      { name: 'Sikkim', duration: '5N/6D' },
-      { name: 'Arunachal Pradesh', duration: '5N/6D' },
-      { name: 'Shillong–Cherrapunji–Dawki', duration: '4N/5D' },
-      { name: 'Gangtok–Darjeeling', duration: '5N/6D' },
-      { name: 'Assam–Meghalaya', duration: '6N/7D' },
-      { name: 'Tawang', duration: '6N/7D' },
-      { name: 'Nagaland', duration: '5N/6D' },
-      { name: 'Ziro Valley', duration: '5N/6D' },
-      { name: 'Seven Sisters Grand Tour', duration: '12N/13D' },
     ],
   },
   {

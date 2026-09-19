@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
           id="why-us-heading"
           eyebrow="Why Choose Us"
           title="Why Travel With Aarohan?"
-          description="Thoughtful planning, clear communication and journeys shaped around the people who travel."
+          description="A professional inbound tour operator with 20 years of experience and clear communication and journeys shaped around the people who travel."
         />
         <div
           ref={ref}
