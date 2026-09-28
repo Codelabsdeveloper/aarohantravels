@@ -117,10 +117,10 @@ export default function Hero() {
       <div className="container-site relative z-10 max-w-3xl">
         
       <h1 className="hero-animate-delay font-display text-4xl leading-[1.08] font-semibold text-white sm:text-5xl md:text-6xl lg:text-[4.1rem]">
-      {BRAND_NAME} 
+      AAROHAN GLOBAL
         </h1>
         <p className="hero-animate mb-4 text-[20px] font-semibold tracking-[0.22em] text-gold uppercase">
-        Global Tourism Representation
+        Tourism Representation
         </p>
        
         <p className="hero-animate-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
