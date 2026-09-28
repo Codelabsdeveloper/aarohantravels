@@ -115,11 +115,11 @@ export default function Hero() {
       />
 
       <div className="container-site relative z-10 max-w-3xl">
-        <p className="hero-animate mb-4 text-sm font-semibold tracking-[0.22em] text-gold uppercase">
+        <p className="hero-animate mb-4 text-[20px] font-semibold tracking-[0.22em] text-gold uppercase">
           {BRAND_NAME}
         </p>
         <h1 className="hero-animate-delay font-display text-4xl leading-[1.08] font-semibold text-white sm:text-5xl md:text-6xl lg:text-[4.1rem]">
-          Travel More. Create Better Memories.
+            Global Tourism Representation
         </h1>
         <p className="hero-animate-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
           {BRAND_TAGLINE}
