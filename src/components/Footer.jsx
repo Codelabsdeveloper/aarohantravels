@@ -10,6 +10,7 @@ import {
 
 const footerLinks = [
   { href: '#home', label: 'Home' },
+  { href: '#international-destinations', label: 'International' },
   { href: '#destinations', label: 'Destinations' },
   { href: '#spiritual-tours', label: 'Spiritual Tours' },
   { href: '#about', label: 'About' },

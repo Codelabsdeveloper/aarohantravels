@@ -5,6 +5,7 @@ import { WHATSAPP_URL } from '../data/whatsapp';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
+  { href: '#international-destinations', label: 'International' },
   { href: '#destinations', label: 'Destinations' },
   { href: '#spiritual-tours', label: 'Spiritual Tours' },
   { href: '#why-us', label: 'Why Choose Us' },

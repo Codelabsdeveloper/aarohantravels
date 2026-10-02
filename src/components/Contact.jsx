@@ -10,6 +10,7 @@ import {
   WHATSAPP_URL,
 } from '../data/whatsapp';
 import { destinations } from '../data/destinations';
+import { internationalDestinations } from '../data/internationalDestinations';
 import { useReveal } from '../hooks/useReveal';
 
 const initialForm = {
@@ -248,11 +249,20 @@ export default function Contact() {
                   required
                 >
                   <option value="">Select a destination</option>
-                  {destinations.map((item) => (
-                    <option key={item.id} value={item.name}>
-                      {item.name}
-                    </option>
-                  ))}
+                  <optgroup label="International">
+                    {internationalDestinations.map((item) => (
+                      <option key={item.id} value={item.name}>
+                        {item.name}
+                      </option>
+                    ))}
+                  </optgroup>
+                  <optgroup label="India">
+                    {destinations.map((item) => (
+                      <option key={item.id} value={item.name}>
+                        {item.name}
+                      </option>
+                    ))}
+                  </optgroup>
                   <option value="Other / Multiple">Other / Multiple</option>
                 </select>
                 {errors.destination ? (

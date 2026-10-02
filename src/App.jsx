@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Destinations from './components/Destinations';
+import InternationalDestinations from './components/InternationalDestinations';
 import NortheastSpotlight from './components/NortheastSpotlight';
 import SpiritualTours from './components/SpiritualTours';
 import CustomizedTours from './components/CustomizedTours';
@@ -26,6 +27,7 @@ export default function App() {
       <main id="main-content">
         <Hero />
         <About />
+        <InternationalDestinations />
         <Destinations />
         <NortheastSpotlight />
         <SpiritualTours />
