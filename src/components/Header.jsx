@@ -44,15 +44,15 @@ export default function Header() {
       <div className="container-site flex h-[4.5rem] items-center justify-between gap-4 md:h-[5rem]">
         <a
           href="#home"
-          className="relative z-10 flex h-11 w-[4.75rem] shrink-0 items-center justify-start overflow-hidden md:h-12 md:w-[5.5rem]"
+          className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-start overflow-hidden md:h-16 md:w-16"
           onClick={closeMenu}
         >
           <img
-            src={`${import.meta.env.BASE_URL}logo.jpg`}
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt="Aarohan Travels"
             className="max-h-full max-w-full object-contain object-left"
-            width="88"
-            height="48"
+            width="64"
+            height="64"
           />
         </a>
 

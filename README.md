@@ -47,7 +47,7 @@ RewriteRule ^ index.html [QSA,L]
 Configured in `src/data/whatsapp.js`:
 
 - Phone: Tejas BC — 70900 38519
-- Email: aarohantravels14@gmail.com
+- Email: aarohantravels.rc@gmail.com
 - WhatsApp: https://wa.me/917090038519
 
 ## Content updates
@@ -58,4 +58,4 @@ Configured in `src/data/whatsapp.js`:
 
 ## Enquiry form
 
-The contact form validates input and opens an email draft to aarohantravels14@gmail.com. WhatsApp and phone remain alternate enquiry channels.
+The contact form validates input and opens an email draft to aarohantravels.rc@gmail.com. WhatsApp and phone remain alternate enquiry channels.

@@ -25,11 +25,11 @@ export default function Footer() {
         <div>
           <a href="#home" className="inline-flex">
             <img
-              src={`${import.meta.env.BASE_URL}logo.jpg`}
+              src={`${import.meta.env.BASE_URL}logo.png`}
               alt="Aarohan Travels"
-              className="h-14 w-auto max-w-[5.5rem] rounded-lg bg-white object-contain p-1"
-              width="88"
-              height="56"
+              className="h-20 w-auto max-w-[6.5rem] rounded-lg bg-white object-contain p-1.5"
+              width="104"
+              height="80"
               loading="lazy"
             />
           </a>
